@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: D2SI
-  company: Epiconcept
+  company: EpiConcept
   description: Install and configure net-snmpd
   license: ISC
   min_ansible_version: 1.9
