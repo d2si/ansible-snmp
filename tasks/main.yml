@@ -9,7 +9,18 @@
 
 - name: Install the SNMP package
   apt: name={{ snmpd['pkg']['name'] }} state=latest update_cache=yes cache_valid_time=86400
+  when: "ansible_os_family == 'Debian'"
   tags: pkg
+
+# Ansible >=2
+#- name: Update apt-get cache
+#  apt: update_cache=yes cache_valid_time=86400
+#  when: "ansible_os_family == 'Debian'"
+#  tags: pkg
+
+#- name: Install the SNMP package
+#  package: name={{ snmpd['pkg']['name'] }} state=latest
+#  tags: pkg
 
 - name: Configure SNMP
   template:
