@@ -1,0 +1,26 @@
+---
+
+- name: Get OS-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+   - "{{ ansible_distribution }}.yml"
+   - "{{ ansible_os_family }}.yml"
+  tags: always
+
+- name: Install the SNMP daemon package
+  apt: name={{ snmpd['pkg']['name'] }} state=latest
+  tags: pkg
+
+- name: Configure {{ snmpd['cfg']['path'] }}
+  template:
+    src: snmpd.conf.j2
+    dest: "{{ snmpd['cfg']['path'] }}"
+  notify: restart snmpd
+  tags: cfg
+
+- name: Enable the snmpd service
+  service:
+    name: "{{ snmpd['svc']['name'] }}"
+    state: started
+    enabled: yes
+  tags: svc

@@ -1,0 +1,12 @@
+---
+
+snmpd:
+    cfg:
+      path: '{{ osvar_cfg_path }}'
+      syslocation: Sitting on the Dock of the Bay
+      sysContact: Me <me@example.org>
+    pkg:
+      name: '{{ osvar_pkg_name }}'
+    svc:
+      name: '{{ osvar_svc_name }}'
+      enabled: yes
