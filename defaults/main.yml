@@ -2,11 +2,11 @@
 
 snmpd:
     cfg:
-      path: '{{ osvar_cfg_path }}'
+      path: "{{ osvar['cfg']['path'] }}"
       syslocation: Sitting on the Dock of the Bay
       sysContact: Me <me@example.org>
     pkg:
-      name: '{{ osvar_pkg_name }}'
+      name: "{{ osvar['pkg']['name'] }}"
     svc:
-      name: '{{ osvar_svc_name }}'
+      name: "{{ osvar['svc']['name'] }}"
       enabled: yes

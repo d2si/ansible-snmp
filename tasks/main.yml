@@ -7,18 +7,18 @@
    - "{{ ansible_os_family }}.yml"
   tags: always
 
-- name: Install the SNMP daemon package
+- name: Install the SNMP package
   apt: name={{ snmpd['pkg']['name'] }} state=latest
   tags: pkg
 
-- name: Configure {{ snmpd['cfg']['path'] }}
+- name: Configure SNMP
   template:
     src: snmpd.conf.j2
     dest: "{{ snmpd['cfg']['path'] }}"
-  notify: restart snmpd
+  notify: restart "{{ snmpd['svc']['name'] }}"
   tags: cfg
 
-- name: Enable the snmpd service
+- name: Enable the SNMP service
   service:
     name: "{{ snmpd['svc']['name'] }}"
     state: started
