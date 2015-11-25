@@ -3,11 +3,13 @@
 snmpd:
     cfg:
       path: "{{ osvar['cfg']['path'] }}"
+      agentaddress: "{{ snmpd['cfg']['agentaddress'] }}"
+      agentuser: root
       rocommunity:
         from: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
-        name: public	
-      syslocation: EpiConcept HQ
-      syscontact: Dont Reply <noreply@epiconcept.fr>
+        name: oxalide
+      syslocation: oxalide
+      syscontact: report@oxalide.com
     pkg:
       name: "{{ osvar['pkg']['name'] }}"
     svc:
