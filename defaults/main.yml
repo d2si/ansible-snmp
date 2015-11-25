@@ -3,7 +3,7 @@
 snmpd:
     cfg:
       path: "{{ osvar['cfg']['path'] }}"
-      agentaddress: "{{ snmpd['cfg']['agentaddress'] }}"
+      agentaddress: "{{ ansible_default_ipv4.address }}"
       agentuser: root
       rocommunity:
         from: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
