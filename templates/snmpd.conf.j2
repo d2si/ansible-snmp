@@ -3,8 +3,9 @@
 syslocation	{{ snmpd['cfg']['syslocation'] }}
 syscontact	{{ snmpd['cfg']['syscontact'] }}
 sysservices	72
-rocommunity	{{ snmpd['cfg']['rocommunity']['name'] }} {% if snmpd.cfg.rocommunity.from is defined %} {{ snmpd['cfg']['rocommunity']['from'] }} {% endif %}
-
+{% for rocommunity in snmpd['cfg']['rocommunity'] %}
+rocommunity	{{ rocommunity }}
+{% endfor %}
 agentuser	{{ snmpd['cfg']['agentuser'] }}
 agentaddress	udp:{{ snmpd['cfg']['agentaddress'] }}:161
 

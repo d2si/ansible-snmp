@@ -5,9 +5,7 @@ snmpd:
       path: "{{ osvar['cfg']['path'] }}"
       agentaddress: "{{ ansible_default_ipv4.address }}"
       agentuser: root
-      rocommunity:
-        from: ""
-        name: oxalide
+      rocommunity: ['oxalide']
       syslocation: oxalide
       syscontact: report@oxalide.com
     pkg:
