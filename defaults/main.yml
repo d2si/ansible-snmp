@@ -3,8 +3,11 @@
 snmpd:
     cfg:
       path: "{{ osvar['cfg']['path'] }}"
-      syslocation: Sitting on the Dock of the Bay
-      sysContact: Me <me@example.org>
+      rocommunity:
+        from: "{{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}"
+        name: public	
+      syslocation: EpiConcept HQ
+      syscontact: Dont Reply <noreply@epiconcept.fr>
     pkg:
       name: "{{ osvar['pkg']['name'] }}"
     svc:
