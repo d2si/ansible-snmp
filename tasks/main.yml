@@ -15,7 +15,7 @@
   template:
     src: snmpd.conf.j2
     dest: "{{ snmpd['cfg']['path'] }}"
-  notify: restart "{{ snmpd['svc']['name'] }}"
+  notify: restart SNMP
   tags: cfg
 
 - name: Enable the SNMP service
