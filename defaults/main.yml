@@ -6,7 +6,7 @@ snmpd:
       agentaddress: "{{ ansible_default_ipv4.address }}"
       agentuser: root
       rocommunity:
-        from: 46.218.172.58/32
+        from: ""
         name: oxalide
       syslocation: oxalide
       syscontact: report@oxalide.com
