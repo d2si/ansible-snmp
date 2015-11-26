@@ -3,5 +3,5 @@
 object Host "{{ ansible_hostname }}" {
   import "generic-host"
   address = "{{ ansible_default_ipv4.address }}"
-  vars.snmp = "enabled"
+  vars.snmp_community = "{{ snmpd_cfg_rocommunity }}"
 }
