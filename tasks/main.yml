@@ -13,19 +13,19 @@
   tags: pkg
 
 - name: Install the SNMP package
-  package: name={{ snmpd['pkg']['name'] }} state=latest
+  package: name={{ snmpd_pkg_name }} state=latest
   tags: pkg
 
 - name: Configure SNMP
   template:
     src: snmpd.conf.j2
-    dest: "{{ snmpd['cfg']['path'] }}"
+    dest: "{{ snmpd_cfg_path }}"
   notify: restart SNMP
   tags: cfg
 
 - name: Enable the SNMP service
   service:
-    name: "{{ snmpd['svc']['name'] }}"
+    name: "{{ snmpd_svc_name }}"
     state: started
     enabled: yes
   tags: svc

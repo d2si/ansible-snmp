@@ -1,9 +1,6 @@
 ---
 
-osvar:
-  cfg:
-    path: '/etc/snmp/snmpd.conf'
-  pkg:
-    name: 'snmpd'
-  svc:
-    name: 'snmpd'
+osvar_cfg_path: /etc/snmp/snmpd.conf
+
+osvar_pkg_name: snmpd
+osvar_svc_name: snmpd

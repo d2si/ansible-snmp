@@ -1,4 +1,4 @@
 ---
 
 - name: restart SNMP
-  service: name={{ snmpd['svc']['name'] }} state=restarted
+  service: name={{ snmpd_svc_name }} state=restarted

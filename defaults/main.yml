@@ -1,15 +1,13 @@
 ---
 
-snmpd:
-    cfg:
-      path: "{{ osvar['cfg']['path'] }}"
-      agentaddress: "{{ ansible_default_ipv4.address }}"
-      agentuser: root
-      rocommunity: ['oxalide']
-      syslocation: oxalide
-      syscontact: report@oxalide.com
-    pkg:
-      name: "{{ osvar['pkg']['name'] }}"
-    svc:
-      name: "{{ osvar['svc']['name'] }}"
-      enabled: yes
+snmpd_cfg_path: "{{ osvar_cfg_path }}"
+snmpd_cfg_agentaddress: "{{ ansible_default_ipv4.address }}"
+snmpd_cfg_agentuser: ""
+snmpd_cfg_rocommunity: ['public {{ ansible_default_ipv4.network }}/{{ ansible_default_ipv4.netmask }}']
+snmpd_cfg_syslocation: Sitting on the Dock of the Bay
+snmpd_cfg_syscontact: Me <me@example.org>
+
+snmpd_pkg_name: "{{ osvar_pkg_name }}"
+
+snmpd_svc_name: "{{ osvar_svc_name }}"
+snmpd_svc_enabled: yes
