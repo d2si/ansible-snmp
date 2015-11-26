@@ -29,3 +29,19 @@
     state: started
     enabled: yes
   tags: svc
+
+- name: Add SNMP service configuration to the Icinga server
+  template:
+    src: ic2-service-snmp.conf.j2
+    dest: "{{ snmpd_ic2_cfg_dirpath }}/service-snmp.conf"
+  delegate_to: "{{ snmpd_ic2_cfg_hostname }}"
+  notify: restart icinga2
+  tags: cfg
+
+- name: Add host configuration to the Icinga server
+  template:
+    src: ic2-host.conf.j2
+    dest: "{{ snmpd_ic2_cfg_dirpath }}/host-{{ ansible_hostname }}.conf"
+  delegate_to: "{{ snmpd_ic2_cfg_hostname }}"
+  notify: restart icinga2
+  tags: cfg

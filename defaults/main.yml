@@ -7,6 +7,10 @@ snmpd_cfg_rocommunity: ['public {{ ansible_default_ipv4.network }}/{{ ansible_de
 snmpd_cfg_syslocation: Sitting on the Dock of the Bay
 snmpd_cfg_syscontact: Me <me@example.org>
 
+snmpd_ic2_cfg_dirpath: /etc/icinga2/conf.d
+snmpd_ic2_cfg_hostname: localhost
+snmpd_ic2_svc_name: icinga2
+
 snmpd_pkg_name: "{{ osvar_pkg_name }}"
 
 snmpd_svc_name: "{{ osvar_svc_name }}"
