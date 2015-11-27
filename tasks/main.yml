@@ -26,8 +26,8 @@
 - name: Enable the SNMP service
   service:
     name: "{{ snmpd_svc_name }}"
-    state: started
-    enabled: yes
+    state: "{{ snmpd_svc_state }}"
+    enabled: "{{ snmpd_svc_enabled }}"
   tags: svc
 
 - name: Add SNMP service configuration to the Icinga server
