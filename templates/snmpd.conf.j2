@@ -3,7 +3,7 @@
 syslocation	{{ snmpd_cfg_syslocation }}
 syscontact	{{ snmpd_cfg_syscontact }}
 sysservices	72
-rocommunity	{{ snmpd_cfg_rocommunity }} {{ snmpd_ic2_cfg_hostname }}
+rocommunity	{{ snmpd_cfg_rocommunity }}
 {% if snmpd_cfg_agentuser is defined %}
 agentuser	{{ snmpd_cfg_agentuser }}
 {% endif %}
