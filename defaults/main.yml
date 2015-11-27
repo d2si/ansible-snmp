@@ -17,4 +17,3 @@ snmpd_pkg_name: "{{ osvar_pkg_name }}"
 snmpd_svc_name: "{{ osvar_svc_name }}"
 snmpd_svc_enabled: yes
 snmpd_svc_state: started
-
